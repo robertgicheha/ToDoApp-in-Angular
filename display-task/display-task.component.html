@@ -1,0 +1,9 @@
+<div class="content">
+    <div class="display" *ngFor="let task of todos">
+        <h1>{{task.title}}</h1>
+        <p>{{task.description}}</p>
+        <h4>{{task.date | date: 'short'}}</h4>
+
+        <button type="submit">UPDATE </button>
+    </div>
+</div>

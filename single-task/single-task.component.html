@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="content">
+        <div class="left" *ngIf="todo;else notask">
+            <img src={{todo.image}}
+                alt="Roccat" />
+               
+        </div>
+
+        <div class="right">
+            <h1>{{todo.title}}</h1>
+            <p>{{todo.description}}</p>
+            <p *ngIf="show"> {{todo.date | date}}</p>
+            <button (click)="Update()">Update</button>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #notask>
+<p>No todo with that Id was Found</p>
+</ng-template>
+<!-- <a [routerLink]="['/todos', 2]">Load a todo</a> -->
+
+<div class="content" *ngIf="todo;else notodo" >
+    <div class="display" *ngFor="let task of todos" *>
+        <h1>{{task.title}}</h1>
+        <p>{{task.description}}</p>
+        <h4>{{task.date | date: 'short'}}</h4>
+
+        <button type="submit">UPDATE </button>
+    </div>
+</div>
